@@ -5,5 +5,6 @@ ENV TZ=Europe/Sofia
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get install -y apache2
 COPY ./index.html/ /var/www/html/
+RUN sudo cp /projects/www-static/index.html /var/www/html/index.html
 EXPOSE 80
 
